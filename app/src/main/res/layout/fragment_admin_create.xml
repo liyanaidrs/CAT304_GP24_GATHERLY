@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/sagegreen"
+    tools:context=".AdminCreateFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="693dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/lavender_border"
+                android:orientation="vertical"
+
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Event"
+                    android:textAlignment="center"
+                    android:textColor="@color/emeraldgreen"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/uploadImage"
+                    android:layout_width="323dp"
+                    android:layout_height="178dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/baseline_image_24" />
+
+                <EditText
+                    android:id="@+id/uploadTopic"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Enter event name"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <EditText
+                    android:id="@+id/uploadDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Enter event description"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <EditText
+                    android:id="@+id/uploadLang"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Enter Organiser"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <EditText
+                    android:id="@+id/uploadDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Enter Date"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <EditText
+                    android:id="@+id/uploadParticipant"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Enter Participant Needed"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="3 Checkpoints Activities:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="italic">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/c1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Checkpoint 1"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <EditText
+                    android:id="@+id/c2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Checkpoint 2"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <EditText
+                    android:id="@+id/c3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="Checkpoint 3"
+                    android:padding="16dp"
+                    android:textColor="@color/emeraldgreen" />
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/emeraldgreen"
+                    android:text="Save"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
