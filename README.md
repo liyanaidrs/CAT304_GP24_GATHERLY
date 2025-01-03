@@ -37,7 +37,7 @@ This project introduces a modern approach to event management by integrating QR 
 - Track attendees effectively.
 - Provide attendees with up-to-date event details.
 - Ensure users have quick access to essential event information. It includes features like an event schedule, session details, and organizers' profiles, allowing users to plan their participation efficiently.
-- 
+
 ## HOW THE SYSTEM IMPROVES CLASSIC EVENT MANAGEMENT
 
 By combining modern technology with user-centric design, the system aims to:
