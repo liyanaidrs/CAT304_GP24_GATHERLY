@@ -2,10 +2,10 @@
 
 
 ## INTRODUCTION
-Event management has become increasingly challenging as organizers strive to offer efficient and engaging experiences to attendees.<br><br>
-Traditional methods of event tracking, attendee registration, information sharing, and communication often fall short, leading to inefficiencies and decreased attendee satisfaction.<br><br>
-This project introduces a modern Event Management System (EMS) that leverages QR identification to enhance event management processes.<br><br>
-The system focuses on volunteering events, providing organizers with tools to monitor attendees, share real-time updates, and enable seamless communication between attendees and organizers.<br><br>
+Event management has become increasingly challenging as organizers strive to offer efficient and engaging experiences to attendees.
+Traditional methods of event tracking, attendee registration, information sharing, and communication often fall short, leading to inefficiencies and decreased attendee satisfaction.
+This project introduces a modern Event Management System (EMS) that leverages QR identification to enhance event management processes.
+The system focuses on volunteering events, providing organizers with tools to monitor attendees, share real-time updates, and enable seamless communication between attendees and organizers.
 
 ## KEY FEATURES OF THE EVENT MANAGEMENT SYSTEM
 
