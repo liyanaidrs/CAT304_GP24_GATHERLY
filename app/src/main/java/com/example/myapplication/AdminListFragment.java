@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,13 +35,14 @@ public class AdminListFragment extends Fragment {
     MyAdapter adapter;
 
     @Nullable
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentAdminListBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        //Initialize ProgressDialog
+        // Initialize ProgressDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
@@ -53,8 +56,12 @@ public class AdminListFragment extends Fragment {
 
         // Initialize data list and adapter
         dataList = new ArrayList<>();
-        adapter = new MyAdapter(getActivity(), dataList);//, requireActivity().getSupportFragmentManager());
+        adapter = new MyAdapter(getActivity(), dataList);
         recyclerView.setAdapter(adapter);
+
+        // Initialize SearchView
+        SearchView searchView = binding.searchView;
+        searchView.clearFocus();
 
         // Firebase Database setup
         databaseReference = FirebaseDatabase.getInstance().getReference("Event Created");
@@ -80,7 +87,32 @@ public class AdminListFragment extends Fragment {
             }
         });
 
+        // Set up SearchView
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList(newText);
+                return true;
+            }
+        });
+
         return view;
+    }
+
+    // Filter events based on search input
+    public void searchList(String text) {
+        ArrayList<DataClass> filteredList = new ArrayList<>();
+        for (DataClass dataClass : dataList) {
+            if (dataClass.getDataTitle().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(dataClass);
+            }
+        }
+        adapter.searchDataList(filteredList);
     }
 
     @Override

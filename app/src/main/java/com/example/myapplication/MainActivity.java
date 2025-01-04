@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private EditText adminEmail, adminPassword;
-    private Button adminLoginButton, userLoginButton;
+    private Button adminLoginButton, userLoginButton, organiserButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         adminPassword = findViewById(R.id.admin_password);
         adminLoginButton = findViewById(R.id.Admin_button);
         userLoginButton = findViewById(R.id.LOGIN_button);
+        organiserButton=findViewById(R.id.Organiser_button);
 
         // Set up the admin login button
         adminLoginButton.setOnClickListener(new View.OnClickListener() {
@@ -52,5 +53,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        organiserButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to LoginActivity for regular users
+                Intent intent = new Intent(MainActivity.this, OrganiserActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

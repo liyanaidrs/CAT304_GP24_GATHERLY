@@ -55,6 +55,7 @@ public class MyAdapterList extends RecyclerView.Adapter<MyViewHolderList> {
                 intent.putExtra("Language", dataList.get(holder.getAdapterPosition()).getLanguage());
                 intent.putExtra("Date", dataList.get(holder.getAdapterPosition()).getDate());
                 intent.putExtra("currentUser", dataList.get(holder.getAdapterPosition()).getUsername());
+
                 //intent.putExtra("currentUser", username);
                 context.startActivity(intent);
             }

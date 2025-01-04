@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -60,7 +61,9 @@ public class MyListFragment extends Fragment {
         recyclerView = binding.recyclerView;
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(gridLayoutManager);
-
+        // Initialize SearchView
+        SearchView searchView = binding.searchView;
+        searchView.clearFocus();
         dataList = new ArrayList<>();
         adapter = new MyAdapterList(getActivity(), dataList, username);
         recyclerView.setAdapter(adapter);
@@ -90,10 +93,30 @@ public class MyListFragment extends Fragment {
                 Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList(newText);
+                return true;
+            }
+        });
 
         return view;
     }
-
+    public void searchList(String text) {
+        ArrayList<ApplicationData> filteredList = new ArrayList<>();
+        for (ApplicationData applicationData : dataList) {
+            if (applicationData.getTitle().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(applicationData);
+            }
+        }
+        adapter.searchDataList(filteredList);
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();

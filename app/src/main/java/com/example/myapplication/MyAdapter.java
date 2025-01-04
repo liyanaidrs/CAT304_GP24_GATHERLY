@@ -69,7 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         return dataList.size();
     }
 
-    public void searchDataList(ArrayList<DataClass> searchList){
+    public void searchDataList(ArrayList<DataClass> searchList) {
         dataList = searchList;
         notifyDataSetChanged();
     }

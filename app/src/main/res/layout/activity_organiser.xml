@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:layout_gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".OrganiserActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -30,28 +30,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Gatherly!"
+                android:text="Organiser Login"
                 android:textAlignment="center"
                 android:textColor="@color/emeraldgreen"
-                android:textSize="36sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Login As Admin"
-                android:layout_gravity="center"
-                android:padding="8dp"
-                android:layout_marginTop="2sp"
-                android:textColor="@color/emeraldgreen"
-                android:textSize="18sp"/>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/admin_email"
+                android:id="@+id/login_username"
                 android:background="@drawable/custom_edit_text"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Email"
+                android:hint="Username"
+
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
@@ -59,7 +52,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/admin_password"
+                android:id="@+id/login_password"
                 android:background="@drawable/custom_edit_text"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
@@ -72,34 +65,12 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="LOGIN AS ADMIN"
-                android:id="@+id/Admin_button"
+                android:text="LOGIN as organiser"
+                android:id="@+id/login_button"
                 android:textSize="18sp"
                 app:cornerRadius = "20dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/emeraldgreen"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="LOGIN AS ORGANISER"
-                android:id="@+id/Organiser_button"
-                android:textSize="18sp"
-                app:cornerRadius = "20dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/emeraldgreen"
-                />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="LOGIN AS USER"
-                android:id="@+id/LOGIN_button"
-                android:textSize="18sp"
-                app:cornerRadius = "20dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/emeraldgreen"
-                />
+                android:backgroundTint="@color/emeraldgreen"/>
 
 
 
