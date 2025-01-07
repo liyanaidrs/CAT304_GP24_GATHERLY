@@ -23,7 +23,7 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         binding.bottomNavigationViewAdmin.setBackground(null);
 
-        replaceFragment(new AdminCreateFragment());
+        replaceFragment(new AdminStatisticFragment());
 
         binding.bottomNavigationViewAdmin.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();

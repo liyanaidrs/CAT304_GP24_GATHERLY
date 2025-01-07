@@ -20,19 +20,19 @@ public class StatisticDashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_statistic_dashboard);
 
         // Initialize buttons
-        buttonPieChart = findViewById(R.id.buttonPieChart);
+        //buttonPieChart = findViewById(R.id.buttonPieChart);
         buttonBarChart = findViewById(R.id.buttonBarChart);
         buttonLineChart = findViewById(R.id.buttonLineChart);
 
-        // Set onClickListeners for buttons
-        buttonPieChart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start PieChartActivity
-                Intent intent = new Intent(StatisticDashboardActivity.this, PieChartActivity.class);
-                startActivity(intent);
-            }
-        });
+//        // Set onClickListeners for buttons
+//        buttonPieChart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Start PieChartActivity
+//                Intent intent = new Intent(StatisticDashboardActivity.this, PieChartActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         buttonBarChart.setOnClickListener(new View.OnClickListener() {
             @Override

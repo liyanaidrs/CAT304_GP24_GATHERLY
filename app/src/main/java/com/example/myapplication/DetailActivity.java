@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -28,6 +27,7 @@ public class DetailActivity extends AppCompatActivity {
     Button editButton;
     String key = "";
     String imageUrl = "";
+    Button chat;
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
 
@@ -42,7 +42,8 @@ public class DetailActivity extends AppCompatActivity {
         detailLang = findViewById(R.id.detailLang);
         detailDate = findViewById(R.id.detailDate);
         detailParticipant = findViewById(R.id.detailParticipant);
-        ImageView closeIcon = findViewById(R.id.cancelButton); // Keep this one only
+        ImageView closeIcon = findViewById(R.id.cancelButton);
+        chat=findViewById(R.id.chatbutton);
         deleteButton = findViewById(R.id.deletebutton);
         c1 = findViewById(R.id.c1);
         c2 = findViewById(R.id.c2);
@@ -68,15 +69,37 @@ public class DetailActivity extends AppCompatActivity {
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
 
-        // Close the activity on close icon click
+        // Open the image in fullscreen when clicked
+        detailImage.setOnClickListener(v -> openImageDialog(imageUrl));
         closeIcon.setOnClickListener(v -> finish());
+        // Close the DetailActivity and return to the previous activity
 
         // Handle delete button click
         deleteButton.setOnClickListener(v -> {
             if (key != null && !key.isEmpty()) {
-                deleteEvent();
+                // First, delete the image from Firebase Storage
+//                StorageReference imageRef = storageReference;
+//                imageRef.delete().addOnSuccessListener(unused -> {
+                // If the image deletion is successful, proceed to delete the event data
+                databaseReference.child(key).removeValue().addOnSuccessListener(unused1 -> {
+                    Toast.makeText(DetailActivity.this, "Event deleted successfully", Toast.LENGTH_SHORT).show();
+                    // Close the activity and return to the previous screen
+                    finish();
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(DetailActivity.this, "Failed to delete event data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+//                }).addOnFailureListener(e -> {
+//                    Toast.makeText(DetailActivity.this, "Failed to delete image: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                });
             } else {
                 Toast.makeText(DetailActivity.this, "Event key not available", Toast.LENGTH_SHORT).show();
+            }
+        });
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailActivity.this, AdminChatActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -89,7 +112,7 @@ public class DetailActivity extends AppCompatActivity {
 
         Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.dialog_fullscreen_image); // Ensure this layout exists
+        dialog.setContentView(R.layout.dialog_fullscreen_image);
 
         ImageView fullScreenImage = dialog.findViewById(R.id.fullScreenImage);
         ImageView closeButton = dialog.findViewById(R.id.closeButton);
@@ -103,31 +126,4 @@ public class DetailActivity extends AppCompatActivity {
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     }
 
-    private void deleteEvent() {
-        // Delete event image from Firebase Storage
-        if (imageUrl != null && !imageUrl.isEmpty()) {
-            StorageReference imageRef = storageReference.child(imageUrl.substring(imageUrl.lastIndexOf("/") + 1));
-            imageRef.delete().addOnSuccessListener(aVoid -> {
-                // After deleting image, delete the event data from Firebase
-                deleteEventFromDatabase();
-            }).addOnFailureListener(e -> {
-                Toast.makeText(DetailActivity.this, "Failed to delete image: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            });
-        } else {
-            // If no image, directly delete event data from Firebase
-            deleteEventFromDatabase();
-        }
-    }
-
-    private void deleteEventFromDatabase() {
-        // Delete the event from Firebase Database
-        databaseReference.child(key).removeValue()
-                .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(DetailActivity.this, "Event deleted successfully", Toast.LENGTH_SHORT).show();
-                    finish(); // Close the current activity and return to the previous one
-                })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(DetailActivity.this, "Failed to delete event: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
-    }
 }

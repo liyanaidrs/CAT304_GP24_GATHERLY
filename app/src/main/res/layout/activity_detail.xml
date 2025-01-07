@@ -16,9 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+
         android:elevation="8dp"
         app:cardCornerRadius="30dp"
         app:cardBackgroundColor="@color/white">
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -29,7 +31,6 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="16dp">
-
                 <ImageView
                     android:id="@+id/cancelButton"
                     android:layout_width="20dp"
@@ -38,7 +39,6 @@
                     android:layout_marginLeft="250dp"
                     android:layout_marginTop="8dp"
                     android:src="@drawable/round_close_24" />
-
                 <TextView
                     android:id="@+id/detailTitle"
                     android:layout_width="wrap_content"
@@ -147,6 +147,14 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/red"
                     android:text="Delete"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp" />
+                <Button
+                    android:id="@+id/chatbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/emeraldgreen"
+                    android:text="CHAT ROOM"
                     android:textSize="18sp"
                     app:cornerRadius="20dp" />
 

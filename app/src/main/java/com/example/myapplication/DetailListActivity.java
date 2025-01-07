@@ -3,12 +3,14 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,14 +29,13 @@ public class DetailListActivity extends AppCompatActivity {
     String key = "";
     String imageUrl = "";
     String username;
+    Button chat;
     private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_list);
-
-        // Change
 
         // Initialize views
         detailDesc = findViewById(R.id.detailDesc);
@@ -46,6 +47,7 @@ public class DetailListActivity extends AppCompatActivity {
         c2 = findViewById(R.id.c2);
         c3 = findViewById(R.id.c3);
         status = findViewById(R.id.status);
+        chat=findViewById(R.id.chatbutton);
         ImageView closeIcon = findViewById(R.id.cancelButton);
 
         // Firebase initialization
@@ -78,6 +80,17 @@ public class DetailListActivity extends AppCompatActivity {
 
         // Open image in fullscreen dialog on click
         detailImage.setOnClickListener(v -> openImageDialog(imageUrl));
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailListActivity.this, ChatRoomActivity.class);
+                intent.putExtra("username", username);
+                intent.putExtra("detailTitle", detailTitle.getText().toString()); // Pass the title correctly
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void loadCheckpointData() {

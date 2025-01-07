@@ -43,7 +43,7 @@ public class AdminScanFragment extends Fragment {
         scanQrBtn = view.findViewById(R.id.scanQrBtn);
         scannedValueTv = view.findViewById(R.id.scannedValueTv);
         eventInput = view.findViewById(R.id.events);
-        checkpoint=view.findViewById(R.id.c);
+        //checkpoint=view.findViewById(R.id.c);
 
         scanQrBtn.setOnClickListener(v -> {
             String eventName = eventInput.getText().toString().trim();

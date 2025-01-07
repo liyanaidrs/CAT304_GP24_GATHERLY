@@ -51,15 +51,15 @@
                     android:layout_marginTop="3dp"
                     android:textColor="@color/emeraldgreen" />
 
-                <Button
-                    android:id="@+id/buttonPieChart"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:text="Organisers"
-                    android:textSize="18sp"
-                    app:cornerRadius="20dp"/>
+<!--                <Button-->
+<!--                    android:id="@+id/buttonPieChart"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:text="Organisers"-->
+<!--                    android:textSize="18sp"-->
+<!--                    app:cornerRadius="20dp"/>-->
 
                 <Button
                     android:id="@+id/buttonBarChart"

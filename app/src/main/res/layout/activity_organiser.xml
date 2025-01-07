@@ -30,20 +30,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Organiser Login"
+                android:text="Login"
                 android:textAlignment="center"
                 android:textColor="@color/emeraldgreen"
-                android:textSize="25sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="As Organiser"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:layout_marginTop="2sp"
+                android:textColor="@color/emeraldgreen"
+                android:textSize="18sp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/login_username"
+                android:id="@+id/login_email"
                 android:background="@drawable/custom_edit_text"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Username"
+                android:hint="Email"
 
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
@@ -65,7 +75,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="LOGIN as organiser"
+                android:text="LOGIN"
                 android:id="@+id/login_button"
                 android:textSize="18sp"
                 app:cornerRadius = "20dp"

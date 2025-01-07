@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class OrganiserScan extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class OrganiserScanActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
 
@@ -58,9 +58,15 @@ public class OrganiserScan extends AppCompatActivity implements NavigationView.O
                     .beginTransaction()
                     .replace(R.id.fragment_container, new OrganiserStatisticFragment())
                     .commit();
-        } else if (id == R.id.nav_logout) {
+        }  else if (id == R.id.nav_chat) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new OrganiserChatFragment())
+                    .commit();
+        }
+        else if (id == R.id.nav_logout) {
             Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(OrganiserScan.this, MainActivity.class);
+            Intent intent = new Intent(OrganiserScanActivity.this, MainActivity.class);
             startActivity(intent);
 
 
