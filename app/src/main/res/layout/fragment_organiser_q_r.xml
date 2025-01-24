@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg8"
     tools:context=".OrganiserQRFragment">
 
     <TextView
@@ -71,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/sagegreen"
+        android:backgroundTint="@color/emeraldgreen"
         android:gravity="center"
         android:text="Scan QR"
         android:textSize="18sp"
