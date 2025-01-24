@@ -46,3 +46,13 @@ By combining modern technology with user-centric design, the system aims to:
 - Improve attendee satisfaction through seamless updates and communication.
 - Facilitate well-planned and engaging events.
 
+## IMAGES
+
+![Alt Text](app/src/main/res/drawable/main.png)
+![Alt Text](app/src/main/res/drawable/login.png)
+![Alt Text](app/src/main/res/drawable/welcome.png)
+![Alt Text](app/src/main/res/drawable/qrscan.png)
+![Alt Text](app/src/main/res/drawable/dashboard.png)
+
+
+
