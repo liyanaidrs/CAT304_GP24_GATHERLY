@@ -7,29 +7,30 @@ Traditional methods of event tracking, attendee registration, information sharin
 This project introduces a modern Event Management System (EMS) that leverages QR identification to enhance event management processes.
 The system focuses on volunteering events, providing organizers with tools to monitor attendees, share real-time updates, and enable seamless communication between attendees and organizers.
 
+## OBJECTIVES
+1. To develop an event management system that implement progress tracking mechanism by scanning QR code identification.
+2. To create a user-friendly platform that allows users to access event details by designing a clear and organized layout.
+3. To implement a real-time communication within the system using chatbot feature.
+
 ## KEY FEATURES OF THE EVENT MANAGEMENT SYSTEM
 
-### 1. Authentication Module
-- Users can create accounts by filling in their personal information (e.g., name, email, password).
-- Secure access to the platform with login and logout functionality.
-- Both organizers and users can view and modify their profiles.
-- QR code identification is generated for each user account.
+### 1. Authentication & Profile Module
+- Enables users to create and manage secure accounts.
+- Allows profile updates and facilitates login/logout functionality.
+
 
 ### 2. Event Management Module
-- Organizers can add events and update or delete event details.
-- Users can view a list of available events and join events they are interested in.
-- Users can view their joined events on the "My List" page.
+- Admins can create, update and manage events.
+- Users can view, join and access details of their registered events, including group chats.
 
-### 3. Event Monitoring Module
-- Organizers can see the list of all attendees for ongoing events.
-- Users can view the details of their joined events and cancel participation if needed.
-- Real-time communication is enabled via a chat feature, allowing users to ask questions and organizers to respond promptly.
 
-### 4. Progress Tracking Module
-- Organizers can scan users' QR codes at checkpoints.
-- Organizers can monitor and validate user participation in real-time.
-- Analytics on user participation are displayed on the admin dashboard.
-- Users receive rewards upon completing all checkpoints and can view their achievements from current and past events.
+### 3. Dashboard Module
+- Provides admins and organizers with access to user lists, event details, QR codes and participant statistics.
+
+### 4. QR & Reward Module
+- Generates unique QR codes for users.
+- QR codes are scanned at checkpoints to track progress and rewards.
+- Visualizes event data for admin and organizer analysis.
 
 ## SYSTEM HIGHLIGHTS
 
